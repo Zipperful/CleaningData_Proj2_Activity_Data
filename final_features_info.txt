@@ -1,0 +1,44 @@
+Feature Selection and Info Codebook
+====================================
+
+For this dataset, the means and standard deviations of sets of various types of acceleration data were taken in different dimensions of 30 subjects performing various simple activities.  
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+A Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag., producing frequency data from the time-series data. 
+
+These signals were used to estimate variables of the feature vector for each pattern.  The means and standard deviations of these variables recorded.  Then, the data pertinent only to the means and standard deviations of these signals in the three dimensions were extracted from this cluster of features, for both the signal and frequency data.
+
+The data was then deconvolved so that the readings in each dimension were treated as an observation seperate from the same reading types in different dimensions.  Then, finally, the means of these features- the means and standard deviations of the time-series and frequency data- were calculated.  For each subject and each activity type in each dimension, the resultant mean of these variables is recorded.  
+
+The dataset therefore has 540 rows, one for every combination of recordings taken about each of 6 activities for each of 30 subjects in each of 3 dimensions.
+
+The first column is an ID for each, and the next 3 columns store this information seperately.  The remaining 16 columns record means of the means and standard deviations of the acceleration-relevant and acceleration-calculated frequency signals.  This information is unitless, as it has been normalized to lie between -1 and 1, so for acceleration or frequency you can think of each value as represents "percentage of the maximum value of this measurement in whatever units it was measured in", with a negative indicating acceleration on the same scale but in the opposite direction.  The feature names are listed below along with information on the ID's; the rest of the variables are self-descriptively named and unitless and therefore have no accompying notes.
+
+
+"data_id" 
+	Unique factor variable, one of 540 ids made up of strings of the activity_type, subject_id, and direction factors
+"activity_type" 
+	Factor variable of levels "walking", "walking_upstairs", "walking_downstairs", "sitting", "standing", and "laying" denoting types of activity measured
+"subject_id" 
+	Factor variable id's for each of 30 subjects ranging from 1-30
+"direction" 
+	Factor variable describing the dimension, "X", "Y", or "Z" the measurement was taken in
+"mean of means of acceleration on body over time" 
+"mean of means of gravitational acceleration signal over time" 
+"mean of means of jerk on body over time" 
+"mean of means of gyroscopic acceleration on body over time" 
+"mean of means of gyroscopic jerk on body over time" 
+"mean of standard deviations of acceleration on body over time" 
+"mean of standard deviations of gravitational acceleration signal over time" 
+"mean of standard deviations of jerk on body over time" 
+"mean of standard deviations of gyroscopic acceleration on body over time" 
+"mean of standard deviations of gyroscopic jerk on body over time" 
+"mean of means of body acceleration frequency signal" 
+"mean of means of jerk frequency signals" 
+"mean of means of gyroscopic frequency signal of body" 
+"mean of standard deviations of acceleration frequency signal" 
+"mean of standard deviations of jerk frequency signal" 
+"mean of standard deviations of gyroscopic frequency signal of body"
